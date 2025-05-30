@@ -12,7 +12,10 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://neojournal-frontend.vercel.app', // remplace par ton URL frontend Vercel
+}));
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
